@@ -272,8 +272,8 @@
             }
         }
 
-        function processClone(original, clone, vector) {
-            var clone = originalClone;
+        function processClone(original, originalClone, vector) {
+            let clone = originalClone;
             if (!(clone instanceof Element)) return clone;
 
             return Promise.resolve()
@@ -302,7 +302,8 @@
                     var y = (canvas.height / 2) - (height / 2);
                     var ctx = canvas.getContext('2d');
                     ctx.drawImage(original, x, y, width, height);
-                    var image = clone = document.createElement('img');
+                    var image = document.createElement('img');
+                    clone = image;
                     try {
                         image.src = canvas.toDataURL();
                     } catch (err) {
