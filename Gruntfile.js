@@ -8,13 +8,13 @@ module.exports = function(grunt) {
                 jshintrc: true
             }
         },
-        karma: {
-            unit: {
-                configFile: 'karma.conf.js',
-                background: false,
-                singleRun: true
-            }
-        },
+        // karma: {
+        //     unit: {
+        //         configFile: 'karma.conf.js',
+        //         background: false,
+        //         singleRun: true
+        //     }
+        // },
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
@@ -36,6 +36,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('test', ['karma']);
-    grunt.registerTask('default', ['jshint', 'test', 'uglify']);
+    // grunt.registerTask('test', ['karma']);
+    grunt.registerTask('default', ['jshint','uglify']);
 };
